@@ -12,6 +12,7 @@ Test Teardown    kill browser
 search flights with valid fields  
     [Arguments]    ${from_loc}    ${to_loc}  
     open browser and invoke app
+    open browser and invoke app
     verify homepage
     perform search flights    ${from_loc}    ${to_loc}
     kill browser
