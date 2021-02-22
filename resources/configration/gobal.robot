@@ -1,0 +1,4 @@
+*** Variable ***
+
+${url}    https://www.cleartrip.com/
+${browser}    chrome

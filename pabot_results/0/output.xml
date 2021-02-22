@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.6 on win32)" generated="20210222 06:58:20.124" rpa="false">
+<suite id="s1" name="Flights Tst Suite" source="C:\Users\Vasu\Desktop\reddot\workspace\clearproject\workflows\flights_test_cases\flights_tst_suite.robot">
+<test id="s1-t1" name="Tc01 search flights between hyd and bang">
+<kw name="search flights with valid fields">
+<arguments>
+<arg>Hyderabad, IN - Rajiv Gandhi International (HYD)</arg>
+<arg>Bangalore, IN - Kempegowda International Airport (BLR)</arg>
+</arguments>
+<kw name="open browser and invoke app" library="browser_utils">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:20.435" level="INFO">Opening browser 'chrome' to base url 'https://www.cleartrip.com/'.</msg>
+<status status="PASS" starttime="20210222 06:58:20.435" endtime="20210222 06:58:26.880"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210222 06:58:26.880" endtime="20210222 06:58:27.103"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:20.435" endtime="20210222 06:58:27.103"></status>
+</kw>
+<kw name="verify homepage" library="home_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//h1[contains(text(),'Search flights')]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:27.199" level="INFO">Element '//h1[contains(text(),'Search flights')]' is displayed.</msg>
+<status status="PASS" starttime="20210222 06:58:27.105" endtime="20210222 06:58:27.199"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:27.104" endtime="20210222 06:58:27.200"></status>
+</kw>
+<kw name="perform search flights" library="flights_resource">
+<arguments>
+<arg>${from_loc}</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='OneWay']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:27.201" level="INFO">Clicking element '//input[@id='OneWay']'.</msg>
+<status status="PASS" starttime="20210222 06:58:27.200" endtime="20210222 06:58:27.318"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210222 06:58:32.318" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210222 06:58:27.318" endtime="20210222 06:58:32.318"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='RoundTrip']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:32.318" level="INFO">Clicking element '//input[@id='RoundTrip']'.</msg>
+<status status="PASS" starttime="20210222 06:58:32.318" endtime="20210222 06:58:32.458"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='FromTag']</arg>
+<arg>${from_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:32.459" level="INFO">Typing text 'Hyderabad, IN - Rajiv Gandhi International (HYD)' into text field '//input[@id='FromTag']'.</msg>
+<status status="PASS" starttime="20210222 06:58:32.458" endtime="20210222 06:58:32.808"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='ToTag']</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:32.809" level="INFO">Typing text 'Bangalore, IN - Kempegowda International Airport (BLR)' into text field '//input[@id='ToTag']'.</msg>
+<status status="PASS" starttime="20210222 06:58:32.808" endtime="20210222 06:58:33.158"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:33.159" level="INFO">Clicking element '//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210222 06:58:34.606" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210222 06:58:34.259" endtime="20210222 06:58:34.606"></status>
+</kw>
+<msg timestamp="20210222 06:58:34.665" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;i class="icon ir datePicker"&gt;...&lt;/i&gt; is not clickable at point (378, 535). Other element would receive the click: &lt;a href="/privacy-policy/" target="_blank" style="color: white; text-decoration: underline"&gt;...&lt;/a&gt;
+  (Session info: chrome=88.0.4324.182)
+</msg>
+<status status="FAIL" starttime="20210222 06:58:33.159" endtime="20210222 06:58:34.665"></status>
+</kw>
+<status status="FAIL" starttime="20210222 06:58:27.200" endtime="20210222 06:58:34.666"></status>
+</kw>
+<status status="FAIL" starttime="20210222 06:58:20.434" endtime="20210222 06:58:34.666"></status>
+</kw>
+<kw name="kill browser" library="browser_utils" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210222 06:58:34.667" endtime="20210222 06:58:37.794"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:34.666" endtime="20210222 06:58:37.794"></status>
+</kw>
+<status status="FAIL" starttime="20210222 06:58:20.433" endtime="20210222 06:58:37.794" critical="yes">ElementClickInterceptedException: Message: element click intercepted: Element &lt;i class="icon ir datePicker"&gt;...&lt;/i&gt; is not clickable at point (378, 535). Other element would receive the click: &lt;a href="/privacy-policy/" target="_blank" style="color: white; text-decoration: underline"&gt;...&lt;/a&gt;
+  (Session info: chrome=88.0.4324.182)
+</status>
+</test>
+<test id="s1-t2" name="Tc02 search flights between bang and hyd">
+<kw name="search flights with valid fields">
+<arguments>
+<arg>Bangalore, IN - Kempegowda International Airport (BLR)</arg>
+<arg>Hyderabad, IN - Rajiv Gandhi International (HYD)</arg>
+</arguments>
+<kw name="open browser and invoke app" library="browser_utils">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:37.802" level="INFO">Opening browser 'chrome' to base url 'https://www.cleartrip.com/'.</msg>
+<status status="PASS" starttime="20210222 06:58:37.801" endtime="20210222 06:58:43.667"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210222 06:58:43.667" endtime="20210222 06:58:43.855"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:37.800" endtime="20210222 06:58:43.855"></status>
+</kw>
+<kw name="verify homepage" library="home_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//h1[contains(text(),'Search flights')]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:43.944" level="INFO">Element '//h1[contains(text(),'Search flights')]' is displayed.</msg>
+<status status="PASS" starttime="20210222 06:58:43.856" endtime="20210222 06:58:43.944"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:43.855" endtime="20210222 06:58:43.944"></status>
+</kw>
+<kw name="perform search flights" library="flights_resource">
+<arguments>
+<arg>${from_loc}</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='OneWay']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:43.946" level="INFO">Clicking element '//input[@id='OneWay']'.</msg>
+<status status="PASS" starttime="20210222 06:58:43.945" endtime="20210222 06:58:44.062"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.062" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210222 06:58:44.062" endtime="20210222 06:58:49.062"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='RoundTrip']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.064" level="INFO">Clicking element '//input[@id='RoundTrip']'.</msg>
+<status status="PASS" starttime="20210222 06:58:49.063" endtime="20210222 06:58:49.215"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='FromTag']</arg>
+<arg>${from_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.216" level="INFO">Typing text 'Bangalore, IN - Kempegowda International Airport (BLR)' into text field '//input[@id='FromTag']'.</msg>
+<status status="PASS" starttime="20210222 06:58:49.216" endtime="20210222 06:58:49.533"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='ToTag']</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.534" level="INFO">Typing text 'Hyderabad, IN - Rajiv Gandhi International (HYD)' into text field '//input[@id='ToTag']'.</msg>
+<status status="PASS" starttime="20210222 06:58:49.533" endtime="20210222 06:58:49.807"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.807" level="INFO">Clicking element '//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]'.</msg>
+<status status="PASS" starttime="20210222 06:58:49.807" endtime="20210222 06:58:49.947"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[3]/a[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:49.947" level="INFO">Clicking element '//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[3]/a[1]'.</msg>
+<status status="PASS" starttime="20210222 06:58:49.947" endtime="20210222 06:58:50.068"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[3]/dl[1]/dd[1]/div[1]/a[1]/i[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.069" level="INFO">Clicking element '//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[3]/dl[1]/dd[1]/div[1]/a[1]/i[1]'.</msg>
+<status status="PASS" starttime="20210222 06:58:50.068" endtime="20210222 06:58:50.195"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/a[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.196" level="INFO">Clicking element '//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/a[1]'.</msg>
+<status status="PASS" starttime="20210222 06:58:50.196" endtime="20210222 06:58:50.276"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Adults']</arg>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.277" level="INFO">Selecting options from selection list '//select[@id='Adults']' by index 4.</msg>
+<status status="PASS" starttime="20210222 06:58:50.277" endtime="20210222 06:58:50.413"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Childrens']</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.415" level="INFO">Selecting options from selection list '//select[@id='Childrens']' by index 2.</msg>
+<status status="PASS" starttime="20210222 06:58:50.414" endtime="20210222 06:58:50.531"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Infants']</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.531" level="INFO">Selecting options from selection list '//select[@id='Infants']' by index 2.</msg>
+<status status="PASS" starttime="20210222 06:58:50.531" endtime="20210222 06:58:50.643"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='SearchBtn']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:50.644" level="INFO">Clicking button '//input[@id='SearchBtn']'.</msg>
+<status status="PASS" starttime="20210222 06:58:50.643" endtime="20210222 06:58:50.737"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:43.945" endtime="20210222 06:58:50.738"></status>
+</kw>
+<kw name="kill browser" library="browser_utils">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210222 06:58:50.738" endtime="20210222 06:58:52.852"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:50.738" endtime="20210222 06:58:52.852"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:37.799" endtime="20210222 06:58:52.853"></status>
+</kw>
+<kw name="kill browser" library="browser_utils" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210222 06:58:52.854" endtime="20210222 06:58:52.854"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:52.853" endtime="20210222 06:58:52.855"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:37.797" endtime="20210222 06:58:52.855" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Tc03 search flights between tirupati and hyd">
+<kw name="search flights with valid fields">
+<arguments>
+<arg>Tirupati, IN - Tirupati (TIR)</arg>
+<arg>Hyderabad, IN - Rajiv Gandhi International (HYD)</arg>
+</arguments>
+<kw name="open browser and invoke app" library="browser_utils">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20210222 06:58:52.859" level="INFO">Opening browser 'chrome' to base url 'https://www.cleartrip.com/'.</msg>
+<status status="PASS" starttime="20210222 06:58:52.858" endtime="20210222 06:58:58.628"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210222 06:58:58.628" endtime="20210222 06:58:58.834"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:52.857" endtime="20210222 06:58:58.835"></status>
+</kw>
+<kw name="verify homepage" library="home_page">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>//h1[contains(text(),'Search flights')]</arg>
+</arguments>
+<msg timestamp="20210222 06:58:58.907" level="INFO">Element '//h1[contains(text(),'Search flights')]' is displayed.</msg>
+<status status="PASS" starttime="20210222 06:58:58.836" endtime="20210222 06:58:58.908"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:58.835" endtime="20210222 06:58:58.908"></status>
+</kw>
+<kw name="perform search flights" library="flights_resource">
+<arguments>
+<arg>${from_loc}</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='OneWay']</arg>
+</arguments>
+<msg timestamp="20210222 06:58:58.909" level="INFO">Clicking element '//input[@id='OneWay']'.</msg>
+<status status="PASS" starttime="20210222 06:58:58.909" endtime="20210222 06:58:59.019"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.021" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210222 06:58:59.019" endtime="20210222 06:59:04.021"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='RoundTrip']</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.022" level="INFO">Clicking element '//input[@id='RoundTrip']'.</msg>
+<status status="PASS" starttime="20210222 06:59:04.021" endtime="20210222 06:59:04.168"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='FromTag']</arg>
+<arg>${from_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.169" level="INFO">Typing text 'Tirupati, IN - Tirupati (TIR)' into text field '//input[@id='FromTag']'.</msg>
+<status status="PASS" starttime="20210222 06:59:04.168" endtime="20210222 06:59:04.449"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='ToTag']</arg>
+<arg>${to_loc}</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.450" level="INFO">Typing text 'Hyderabad, IN - Rajiv Gandhi International (HYD)' into text field '//input[@id='ToTag']'.</msg>
+<status status="PASS" starttime="20210222 06:59:04.449" endtime="20210222 06:59:04.789"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.790" level="INFO">Clicking element '//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[1]/dl[1]/dd[1]/div[1]/a[1]/i[1]'.</msg>
+<status status="PASS" starttime="20210222 06:59:04.789" endtime="20210222 06:59:04.955"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[3]/a[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:59:04.956" level="INFO">Clicking element '//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[3]/a[1]'.</msg>
+<status status="PASS" starttime="20210222 06:59:04.955" endtime="20210222 06:59:05.089"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[3]/dl[1]/dd[1]/div[1]/a[1]/i[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.090" level="INFO">Clicking element '//body/section[@id='Home']/div[1]/div[1]/div[1]/form[1]/div[4]/section[2]/div[3]/dl[1]/dd[1]/div[1]/a[1]/i[1]'.</msg>
+<status status="PASS" starttime="20210222 06:59:05.089" endtime="20210222 06:59:05.235"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/a[1]</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.236" level="INFO">Clicking element '//body[1]/div[2]/div[1]/table[1]/tbody[1]/tr[4]/td[7]/a[1]'.</msg>
+<status status="PASS" starttime="20210222 06:59:05.235" endtime="20210222 06:59:05.332"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Adults']</arg>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.333" level="INFO">Selecting options from selection list '//select[@id='Adults']' by index 4.</msg>
+<status status="PASS" starttime="20210222 06:59:05.332" endtime="20210222 06:59:05.505"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Childrens']</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.507" level="INFO">Selecting options from selection list '//select[@id='Childrens']' by index 2.</msg>
+<status status="PASS" starttime="20210222 06:59:05.505" endtime="20210222 06:59:05.689"></status>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<arguments>
+<arg>//select[@id='Infants']</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.690" level="INFO">Selecting options from selection list '//select[@id='Infants']' by index 2.</msg>
+<status status="PASS" starttime="20210222 06:59:05.689" endtime="20210222 06:59:05.881"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>//input[@id='SearchBtn']</arg>
+</arguments>
+<msg timestamp="20210222 06:59:05.882" level="INFO">Clicking button '//input[@id='SearchBtn']'.</msg>
+<status status="PASS" starttime="20210222 06:59:05.881" endtime="20210222 06:59:06.040"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:58.908" endtime="20210222 06:59:06.041"></status>
+</kw>
+<kw name="kill browser" library="browser_utils">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210222 06:59:06.042" endtime="20210222 06:59:08.184"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:59:06.041" endtime="20210222 06:59:08.185"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:52.857" endtime="20210222 06:59:08.186"></status>
+</kw>
+<kw name="kill browser" library="browser_utils" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210222 06:59:08.188" endtime="20210222 06:59:08.189"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:59:08.187" endtime="20210222 06:59:08.189"></status>
+</kw>
+<status status="PASS" starttime="20210222 06:58:52.856" endtime="20210222 06:59:08.190" critical="yes"></status>
+</test>
+<status status="FAIL" starttime="20210222 06:58:20.126" endtime="20210222 06:59:08.193"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" id="s1" name="Flights Tst Suite">Flights Tst Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

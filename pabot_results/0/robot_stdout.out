@@ -1,0 +1,16 @@
+==============================================================================
+Flights Tst Suite                                                             
+==============================================================================
+Tc01 search flights between hyd and bang                              | FAIL |
+ElementClickInterceptedException: Message: element click intercepted: Element <i class="icon ir datePicker">...</i> is not clickable at point (378, 535). Other element would receive the click: <a href="/privacy-policy/" target="_blank" style="color: white; text-decoration: underline">...</a>
+  (Session info: chrome=88.0.4324.182)
+------------------------------------------------------------------------------
+Tc02 search flights between bang and hyd                              | PASS |
+------------------------------------------------------------------------------
+Tc03 search flights between tirupati and hyd                          | PASS |
+------------------------------------------------------------------------------
+Flights Tst Suite                                                     | FAIL |
+3 critical tests, 2 passed, 1 failed
+3 tests total, 2 passed, 1 failed
+==============================================================================
+Output:  C:\Users\Vasu\Desktop\reddot\workspace\clearproject\pabot_results\0\output.xml
